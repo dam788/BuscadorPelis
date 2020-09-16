@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css -->
+  <link rel="stylesheet" href="./assets/css/bulma-rtl.css">
+  <link rel="stylesheet" href="./assets/css/bulma.css.map">
+  <link rel="stylesheet" href="./assets/css/bulma-rtl.css.map">
+  <link rel="stylesheet" href="./assets/css/bulma.css">
+  <!-- css plano -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Buscador Peliculas</title>
+</head>
+
+<body>
+
+<div class="columns has-background-dark">
+  <div class="column">
+    <h1 class="title has-text-centered mt-6 mb-3 has-text-primary">Buscador de Peliculas</h1>
+  </div>
+</div>
+<div class="container has-background-white mt-5 mb-5 has-background-primary-light">
+  <div class="columns mt-6">
+    <div class="column"></div>
+    <div class="column is-one-third ml-4 mr-4">
+      <form id="submit" class="field has-addons" type="submit">
+        <div class="control is-expanded ">
+          <input class="input is-primary" type="text" placeholder="Ingrese Película">
+        </div>
+        <div class="control">
+          <button class="button is-primary" ">
+            Buscar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="column"></div>
+  </div>
+</div>
+
+<div class="container mt-6 mb-6 ">
+  <div id="reference" class="columns is-multiline ml-3 mr-3">
+  </div>
+</div>
+
+
+
+
+</body>
+<script src="./assets/js/codigo.js"></script>
+
+</html>
