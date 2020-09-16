@@ -1,35 +1,39 @@
 let button = document.querySelector('#submit');
 let reference = document.querySelector('#reference');
 let inputText = document.querySelector('.input');
+let spinner = document.querySelector('.spinner');
 
 const eventInput = (event) => {
+
     event.preventDefault();
-    inputText.value === "" ? null : (
-      CallMovies(inputText.value),
-      button.reset()
-    )
+    
+    inputText.value === ""
+        ? null 
+        : CallMovies(inputText.value), button.reset()
 }
 
 const CallMovies = (value) => {
+    // spinner in
+    spinner.style.display = "flex";
 
   setTimeout(async() => {
+    // spinner out
+    spinner.style.display = "none"
+
     let res = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=7e849978&s=${value}`)
     let data = await res.json();
-    let { Search, Response } = data;
-    Response === "False" ?
-        (
-            noMovie(value)
-        ) 
-        :
-        (
-            MovieMaping(Search)
-        ) 
+
+    let { Search, Response } = data;  
+    
+    Response === "False"
+    ? noMovie(value)
+    : MovieMaping(Search);
   }, 2000);
 }
 
-const MovieMaping = (movies) => {
+const MovieMaping = ( movies ) => {
 
-    movies.map(movie => {
+    movies.map( movie => {
         let { Title, Year, Poster } = movie;
         let cards = `
             <div class="column is-one-quarter">
@@ -53,7 +57,7 @@ const MovieMaping = (movies) => {
 
 }
 
-const noMovie = (value) => {
+const noMovie = ( value ) => {
 
 const message = `
     <div class="column deleteNode"></div>
